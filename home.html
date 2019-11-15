@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<title>HOME</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  	<script src="javascript.js"></script>
+  	<style type="text/css">
+  		input{
+  			margin-top: 10px;
+  		}
+  	</style>
+</head>
+<body onload="display()">
+	<button style="border-color:transparent; width:120px; font-size: 16px; height: 30px; margin-top:40px; margin-left:40px; border-radius: 5px; background-color:red;color:#fff;" onclick="clearlist()">CLEAR LIST</button>
+	<a style="text-decoration: none;" href="cart.html">
+		<button style="border-color:transparent; width:120px; font-size: 16px; float: right; height: 30px; margin-top:40px; margin-right:40px; border-radius: 5px; background-color:green; color:#fff;"><span class="glyphicon glyphicon-shopping-cart"></span> MY CART</button>
+	</a>
+	<center style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">
+		<h1 style="color: #000; font-weight: 800;">LIST OF PRODUCTS</h1>
+		<div id = "showval" style="width:500px; height: 95px; overflow-y:auto; overflow-x:hidden; ">
+			
+		</div>
+		<button id="hide" class="btn" style="margin-top:30px; width: 200px; font-size: 16px; height: 60px; background-color: blue; color: #fff; border-radius: 5px; border-color: transparent;">ADD NEW PRODUCTS
+		</button>
+		<div id="search">
+			<input id="seach" type="number" style="width:150px; height: 35px; border-radius:5px; border:3px solid #000;" placeholder=" Search Here"> <span onclick="search()" class="glyphicon glyphicon-search"></span> 
+		</div>
+		<div id="searchresult" style="width:70%; max-height:90px; margin-top:10px; border-color: 2px solid #000;">
+		</div>
+		<div id="myform" style="visibility: visible;">
+			<div name="myForm" action="" style="margin-top: 20px;" onsubmit="return additem()">
+				<input type="text"  id="itemname" placeholder="ITEM NAME" required="Item name is necessary"/>
+				<br>
+				<input type="text" id="itemdesc" placeholder="ITEM DESCRIPTION" required="Item description is necessary"/>
+				<br>
+				<input type="number" id="price" style="width: 190px; height: 16px;" placeholder="ITEM PRICE" required="Invalid value"/>
+				<br>
+				<input type="number" id="quantity" style="width: 190px; height: 16px;" placeholder="ITEM QUANTITY" required="Invalid value"/>
+				<br>
+				<button type="submit" id="add" onclick="return additem()" id="show" class=".btn" style="margin-top:15px; width: 120px; font-size: 16px; height: 30px; background-color: red; color: #fff; border-radius: 5px; border-color: transparent;">ADD
+				</button>
+			</div>
+		</div>
+		<div id="ediform" style="visibility: hidden;">
+			<div id="ediForm" action="" style="margin-top: 20px;" onsubmit="return edit()">
+				
+			</div>
+		</div>
+	</center>
+</body>
+</html>
